@@ -8,8 +8,8 @@ print()
 attempt_bank = [0]
 import random
 current_highscore = ("\n*** The current highscore is {} ***")
-            
-            
+
+
 def guess_attempt():
     while True:
         try:
@@ -23,7 +23,7 @@ def guess_attempt():
         else:
             return guess
 
-        
+
 def start_game():
     answer = random.randint(1, 10)
     guess = 0
@@ -37,8 +37,8 @@ def start_game():
             print("That guess is too low! Try again.")
     print("{} was the correct answer! It took you {} tries to get it right.".format(answer, attempts))
     attempt_bank.append(attempts)
-    
-    
+
+
 def high_score():
     for attempt in attempt_bank:
         if attempt_bank [0] == 0:
@@ -50,21 +50,19 @@ def high_score():
         elif attempt_bank [1] > attempt_bank [0]:
             print(current_highscore.format(attempt_bank [0]))
             del attempt_bank [1]
-    
-    
+
+
 def new_game():
     while True:
         new_game = input("Would you like to start a new game? Y/N:  ")
-        
+
         if new_game.lower() == "y":
             high_score()
             start_game()
         else:
             print("Thank you for playing!")
             break
-    
-    
+
+
 start_game()
 new_game()
-
-# Please reject my entry if it does not meet "Exceeds Expectations" criteria
